@@ -37,3 +37,11 @@ JOIN members m
 ON c.member_id = m.member_id
 WHERE m.plan_type = 'Commercial'
 AND c.claim_status='Denied';
+
+-- Day 5 Orphan record validation
+SELECT c.claim_id,
+       c.member_id
+FROM claims c
+LEFT JOIN members m
+ON c.member_id = m.member_id
+WHERE m.member_id IS NULL;
