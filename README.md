@@ -1,10 +1,20 @@
-# Healthcare SQL Validation
+# Healthcare SQL Validation Project
 
-Backend SQL practice focused on healthcare-style validation.
+This project demonstrates backend data validation using SQL.
 
-## Tables
-- `members` (member demographics + plan)
-- `claims` (claim amount + status linked to member)
+## Topics Covered
+
+- SQL SELECT
+- WHERE filtering
+- Aggregations (COUNT, AVG, MAX)
+- INNER JOIN
+- LEFT JOIN
+- Subqueries
+
+## Tables Used
+
+members  
+claims
 
 ## What I practiced
 - Creating tables + relationships (FK)
@@ -15,3 +25,16 @@ Backend SQL practice focused on healthcare-style validation.
 - `create_tables.sql`
 - `insert_data.sql`
 - `practice_queries.sql`
+
+## Sample Validations
+
+- Detect orphan claims
+- Claims above average amount
+- Member and claim join validation
+- Missing data checks
+
+## Tools Used
+
+- MySQL
+- VS Code
+- GitHub
