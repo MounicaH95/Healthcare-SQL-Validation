@@ -45,3 +45,10 @@ FROM claims c
 LEFT JOIN members m
 ON c.member_id = m.member_id
 WHERE m.member_id IS NULL;
+
+-- Validation: Find members with no claims
+SELECT m.member_name
+FROM members m
+LEFT JOIN claims c
+ON m.member_id = c.member_id
+WHERE c.claim_id IS NULL;
