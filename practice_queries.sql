@@ -1,3 +1,7 @@
+-- ========================
+-- Day 3 BASIC FILTERING
+-- =====================
+
 Select * from members where plan_type='Medicaid';
 
 select member_name,plan_type from members;
@@ -10,7 +14,9 @@ select * from claims where claim_amount between 100 and 600;
 
 select * from claims where claim_status not in ('Approved','Pending');
 
--- Day 4 Join practice
+-- =====================
+-- Day 4 Join Validations
+-- ====================
 
 -- Claims with member details
 SELECT c.claim_id,
@@ -38,7 +44,12 @@ ON c.member_id = m.member_id
 WHERE m.plan_type = 'Commercial'
 AND c.claim_status='Denied';
 
--- Day 5 Orphan record validation
+-- ======================
+-- Day 5 Data validation
+-- =====================
+
+-- Find orphan claims
+
 SELECT c.claim_id,
        c.member_id
 FROM claims c
@@ -53,7 +64,9 @@ LEFT JOIN claims c
 ON m.member_id = c.member_id
 WHERE c.claim_id IS NULL;
 
+-- =========================
 -- Day 6 Subquery validation
+-- =========================
 
 -- Claims above average claim amount
 SELECT *
