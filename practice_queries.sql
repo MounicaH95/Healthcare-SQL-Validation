@@ -61,3 +61,13 @@ FROM claims
 WHERE claim_amount >
       (SELECT AVG(claim_amount)
        FROM claims);
+
+-- members who have the highest claim amount
+SELECT m.member_name,
+       c.claim_amount
+FROM members m
+JOIN claims c
+ON m.member_id = c.member_id
+WHERE c.claim_amount =
+      (SELECT MAX(claim_amount)
+       FROM claims);
