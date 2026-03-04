@@ -52,3 +52,12 @@ FROM members m
 LEFT JOIN claims c
 ON m.member_id = c.member_id
 WHERE c.claim_id IS NULL;
+
+-- Day 6 Subquery validation
+
+-- Claims above average claim amount
+SELECT *
+FROM claims
+WHERE claim_amount >
+      (SELECT AVG(claim_amount)
+       FROM claims);
